@@ -18,21 +18,6 @@ public class Word
 
     }
 
-    // public string Hide
-    // {
-    //     get { return _text; }
-    //     set
-    //     {
-    //         if (value == "___")
-    //         {
-    //             _text = value;
-    //         }
-    //         else
-    //         {
-                
-    //         }
-    //     }
-    // }
     public void Hide(string text)
     {
         // Console.Clear();
@@ -48,21 +33,7 @@ public class Word
     {
         return _isHidden = true;
     }
-    //     public string IsHidden
-    // {
-    //     get { return _text; }
-    //     set
-    //     {
-    //         if (value == "___")
-    //         {
-    //             _text = value;
-    //         }
-    //         else
-    //         {
 
-    //         }
-    //     }
-    // }
     public string GetDisplay()
     {
         return _text;

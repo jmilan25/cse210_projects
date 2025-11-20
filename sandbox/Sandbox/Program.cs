@@ -12,7 +12,7 @@ class Program
                                 "that he gave his only begotten Son , " +
                                 "that whosoever believeth in him should not perish , " +
                                 "but have everlasting life.";
-                                
+
         string[] splitWords = scriptureVerse.Split(' ');
 
         // Word word = new Word(scriptureVerse);
@@ -29,17 +29,9 @@ class Program
             }
             else
             {
-                if (s == "___")  //is hidden
-                {
-                    Word hidden = new Word(s);
-                    Console.Write($"{hidden.IsHidden} ");
-                }
-                else
-                {
-                    Console.Write($"{s} ");
-                    words.Add(new Word(s));
-                    
-                }
+
+                Console.Write($"{s} ");
+                words.Add(new Word(s));
 
             }
 
@@ -47,6 +39,8 @@ class Program
         }
         Console.WriteLine($"\n{border}\n");
     }
+    
+
 }
 
 
