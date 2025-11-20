@@ -6,22 +6,65 @@ public class Word
     public Word(string text)
     {
         _text = text;
+        if (_isHidden is true)
+        {
+            Show(text);
+        }
+        else
+        {
+            _isHidden = false;
+            
+        }
+
     }
 
-    public void Hide()
-    {
-        
-    }
-    public void Show()
-    {
-
-    }
-    // public bool IsHidden()
+    // public string Hide
     // {
-        
+    //     get { return _text; }
+    //     set
+    //     {
+    //         if (value == "___")
+    //         {
+    //             _text = value;
+    //         }
+    //         else
+    //         {
+                
+    //         }
+    //     }
     // }
-    // public static string GetDisplay()
+    public void Hide(string text)
+    {
+        // Console.Clear();
+        text = "___";
+        _isHidden = true;
+    }
+    public void Show(string text)
+    {
+        Console.Write(text);
+        _isHidden = false;
+    }
+    public bool IsHidden()
+    {
+        return _isHidden = true;
+    }
+    //     public string IsHidden
     // {
+    //     get { return _text; }
+    //     set
+    //     {
+    //         if (value == "___")
+    //         {
+    //             _text = value;
+    //         }
+    //         else
+    //         {
 
+    //         }
+    //     }
     // }
+    public string GetDisplay()
+    {
+        return _text;
+    }
 }
