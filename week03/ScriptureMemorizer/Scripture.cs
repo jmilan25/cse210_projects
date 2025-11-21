@@ -2,59 +2,28 @@ using System;
 
 public class Scripture
 {
+    private string _reference;
+    private string _verse;
+    private int _number;
 
-    private Reference _reference;
-    private string _text;
-    // private string scriptureVerse = "For God so loved the world , " +
-    //                     "that he gave his only begotten Son , " +
-    //                     "that whosoever believeth in him should not perish , " +
-    //                     "but have everlasting life.";
-
-    List<Word> _words = new List<Word>();
-
-
-    public Scripture(Reference reference, string text)
+    public Scripture(string reference, string verse)
     {
         _reference = reference;
-        _text = text;
-
+        _verse = verse;
     }
-    public void HideRandomWords(int numberToHide)
+
+    public int HideRandomWords(int numberToHide)
     {
-        // // string[] splitWords = scriptureVerse.Split(' ');
-        // string border = "|------------------------------------------------|";
+        Random randomGenerator = new Random();
+        int x = randomGenerator.Next(1, numberToHide);
+        Console.WriteLine(x);
 
-        // Console.WriteLine($"\n{border}");
-        // foreach (string s in splitWords)
-        // {
-        //     if (s == ",")
-        //     {
-        //         Console.Write($"\b,\n");
-
-        //     }
-        //     else
-        //     {
-
-        //         Console.Write($"{s} ");
-        //         _words.Add(new Word(s));
-
-        //     }
-
-
-        // }
-        // Console.WriteLine($"\n{border}\n");
+        _number = numberToHide;
+        return _number;
     }
+
     public string GetDisplayText()
     {
-        
-        string text = $"{_reference} {_text}";
-        return text;
+        return $"{_reference} - {_verse}";
     }
-    public bool IsCompletelyHidden()
-    {
-        bool text = true;
-        return text;
-    }
-    
-
 }

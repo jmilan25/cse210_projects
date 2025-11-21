@@ -10,17 +10,6 @@ public class Word
         _update = text;
         _isHidden = false;
 
-        // _text = text;
-        // if (_isHidden is true)
-        // {
-        //     Show(text);
-        // }
-        // else
-        // {
-        //     _isHidden = false;
-        //     Hide(text);
-        // }
-
     }
 
     public void Hide()

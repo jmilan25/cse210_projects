@@ -24,20 +24,22 @@ public class Reference
 
     public string GetDisplayText()
     {
+        return $"{_book} {_chapter}:{_verse}";
 
+        // return text;
 
-        if (_endVerse == 0)
-        {
-            string text = $"{_book} {_chapter}:{_verse}";
-            return text;
+    //     if (_endVerse == 0)
+    //     {
+    //         string text = $"{_book} {_chapter}:{_verse}";
+    //         return text;
 
-        }
+    //     }
 
-        else
-        {
-            string text = $"{_book} {_chapter}:{_verse}-{_endVerse}";
-            return text;
-        }
+    //     else
+    //     {
+    //         string text = $"{_book} {_chapter}:{_verse}-{_endVerse}";
+    //         return text;
+    //     }
     }
 
 
