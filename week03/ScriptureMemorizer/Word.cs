@@ -4,11 +4,18 @@ public class Word
     private string _update;
     private bool _isHidden;
 
+
+
     public Word(string text)
     {
         _text = text;
         _update = text;
         _isHidden = false;
+
+        // foreach (string word in text);
+        // {
+            
+        // }
 
     }
 
