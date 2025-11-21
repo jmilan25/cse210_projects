@@ -7,46 +7,34 @@ class Program
         Console.Clear();
         Console.Clear();
         Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
-
         string scriptureVerse = "For God so loved the world , " +
-                                "that he gave his only begotten Son , " +
-                                "that whosoever believeth in him should not perish , " +
-                                "but have everlasting life.";
-                                
-        string[] splitWords = scriptureVerse.Split(' ');
+                        "that he gave his only begotten Son , " +
+                        "that whosoever believeth in him should not perish , " +
+                        "but have everlasting life.";
+        Reference r = new Reference("John", 3, 16);
 
-        // Word word = new Word(scriptureVerse);
-        string border = "|------------------------------------------------|";
-        List<Word> words = new List<Word>();
+        // string _reference = new Reference("John", 3, 16).GetDisplayText();
+        Scripture s = new Scripture(r, scriptureVerse).GetDisplayText();
+        Console.WriteLine(s);
+        // Console.WriteLine(new Scripture(_reference,scriptureVerse).GetDisplayText());
+        // Console.WriteLine(new Scripture(r, scriptureVerse).GetDisplayText());
+        
+        
+        
 
-        Console.WriteLine($"\n{border}");
-        foreach (string s in splitWords)
-        {
-            if (s == ",")
-            {
-                Console.Write($"\b,\n");
-
-            }
-            else
-            {
-                if (s == "___")  //is hidden
-                {
-                    Word hidden = new Word(s);
-                    Console.Write($"{hidden.IsHidden} ");
-                }
-                else
-                {
-                    Console.Write($"{s} ");
-                    words.Add(new Word(s));
-                    
-                }
-
-            }
-
-
-        }
-        Console.WriteLine($"\n{border}\n");
     }
+    static void End()
+    {
+        Console.Write("Press enter to hide words or type \"quit\" to exit");
+        string _quit = Console.ReadLine();
+        if (_quit != "quit")
+        {
+            // repeat
+        }
+
+    }
+    
+
 }
 
 

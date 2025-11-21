@@ -5,19 +5,13 @@ public class Scripture
 
     private Reference _reference;
     private string _text;
+    // private string scriptureVerse = "For God so loved the world , " +
+    //                     "that he gave his only begotten Son , " +
+    //                     "that whosoever believeth in him should not perish , " +
+    //                     "but have everlasting life.";
 
-    List<string> _words = new List<string>();
+    List<Word> _words = new List<Word>();
 
-
-
-    // public static void reference()
-    // {
-    //     Reference r1 = new Reference("John", 3, 16);
-    //     Console.Write($"\n{r1.GetDisplayText()} ");
-    //     Console.WriteLine("For God so loved the world, \nthat he gave his only begotten Son, \nthat whosoever believeth in him should not perish, \nbut have everlasting life.\n");
-
-
-    // }
 
     public Scripture(Reference reference, string text)
     {
@@ -27,22 +21,40 @@ public class Scripture
     }
     public void HideRandomWords(int numberToHide)
     {
-        
+        // // string[] splitWords = scriptureVerse.Split(' ');
+        // string border = "|------------------------------------------------|";
+
+        // Console.WriteLine($"\n{border}");
+        // foreach (string s in splitWords)
+        // {
+        //     if (s == ",")
+        //     {
+        //         Console.Write($"\b,\n");
+
+        //     }
+        //     else
+        //     {
+
+        //         Console.Write($"{s} ");
+        //         _words.Add(new Word(s));
+
+        //     }
+
+
+        // }
+        // Console.WriteLine($"\n{border}\n");
     }
-    // public string GetDisplayText()
-    // {
-
-    // }
-    // public bool isCompletelyHidden()
-    // {
+    public string GetDisplayText()
+    {
         
-    // }
-        
+        string text = $"{_reference} {_text}";
+        return text;
+    }
+    public bool IsCompletelyHidden()
+    {
+        bool text = true;
+        return text;
+    }
+    
 
-
-
-    // foreach (string word in text)
-    // {
-    //     _words.Add(word);
-    // }
 }

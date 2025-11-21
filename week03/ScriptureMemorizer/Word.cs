@@ -1,70 +1,54 @@
 public class Word
 {
     private string _text;
+    private string _update;
     private bool _isHidden;
 
     public Word(string text)
     {
         _text = text;
-        if (_isHidden is true)
-        {
-            Show(text);
-        }
-        else
-        {
-            _isHidden = false;
-            
-        }
-
-    }
-
-    // public string Hide
-    // {
-    //     get { return _text; }
-    //     set
-    //     {
-    //         if (value == "___")
-    //         {
-    //             _text = value;
-    //         }
-    //         else
-    //         {
-                
-    //         }
-    //     }
-    // }
-    public void Hide(string text)
-    {
-        // Console.Clear();
-        text = "___";
-        _isHidden = true;
-    }
-    public void Show(string text)
-    {
-        Console.Write(text);
+        _update = text;
         _isHidden = false;
+
+        // _text = text;
+        // if (_isHidden is true)
+        // {
+        //     Show(text);
+        // }
+        // else
+        // {
+        //     _isHidden = false;
+        //     Hide(text);
+        // }
+
+    }
+
+    public void Hide()
+    {
+        if (!_isHidden)
+        {
+            _update = "___";
+            _isHidden = true;
+        }
+    }
+    public void Show()
+    {
+        if (_isHidden)
+        {
+            _update = _text;
+            _isHidden = false;
+        }
+        // _text = text;
+        // // Console.Write(text);
+        // _isHidden = false;
     }
     public bool IsHidden()
     {
-        return _isHidden = true;
+        return _isHidden;
     }
-    //     public string IsHidden
-    // {
-    //     get { return _text; }
-    //     set
-    //     {
-    //         if (value == "___")
-    //         {
-    //             _text = value;
-    //         }
-    //         else
-    //         {
 
-    //         }
-    //     }
-    // }
     public string GetDisplay()
     {
-        return _text;
+        return _update;
     }
 }
