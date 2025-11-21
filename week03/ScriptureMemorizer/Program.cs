@@ -13,75 +13,46 @@ class Program
                         "but have everlasting life.";
         Reference reference = new Reference("John", 3, 16);
         string _reference = reference.GetDisplayText();
+        // List<int> numbers = new List<int>();
+        // int sum = 0;
+        // List<Word> _words = new List<Word>();
 
-        // Console.WriteLine(new Scripture(_reference, scriptureVerse).GetDisplayText());
-        Scripture verse = new Scripture(_reference, scriptureVerse);
-        string _verse = verse.GetDisplayText();
-        // int _random = verse.HideRandomWords(numberToHide);
-        // int numberToHide;
-
-        
-
-        
 
         string _quit = "test";
-        List<Word> _words = new List<Word>();
 
         while (_quit != "quit")
         {
-            // Console.Clear(); // to clear previous itterations
-
-            string[] splitWords = _verse.Split(' ');
-            string border = "|------------------------------------------------|";
-
-            Console.WriteLine($"\n{border}");
-            foreach (string s in splitWords)
-            {
-            
-                if (s == ",")
-                {
-                    Console.Write($"\b,\n");
-
-                }
-                else
-                {
-                    
-                    Console.Write($"{s} ");
-                    _words.Add(new Word(s));
-
-                }
-
-
-            }
-            Console.WriteLine($"\n{border}\n");
-
-
+            Console.Clear(); // to clear previous itterations
 
 
             // Console.WriteLine(_verse);
+
+            Scripture verse = new Scripture(_reference, scriptureVerse);
+            string _verse = verse.GetDisplayText();
+
+
             Console.Write("Press enter to hide words or type \"quit\" to exit: ");
-            
-            // End(_verse);
-
-
             _quit = Console.ReadLine(); // exit DO NOT DELETE
+
+            // if (_quit != "quit")
+            // {
+            //     numbers.Add(20);
+            // }
+            // foreach (int number in numbers)
+            // {
+            //     sum += number;
+            //     Console.WriteLine(sum);
+            // }
+            // Console.WriteLine(sum);
+
         }
+        Console.Clear();
         
 
-        
-        
         
 
     }
-    // static void End(string text)
-    // {
-    //     Console.WriteLine(text);
-    //     // Console.Write("Press enter to hide words or type \"quit\" to exit: ");
-    //     // string _quit = Console.ReadLine();
-        
-        
 
-    // }
     
 
 }
