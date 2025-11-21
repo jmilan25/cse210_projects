@@ -13,6 +13,9 @@ class Program
                         "but have everlasting life.";
         Reference reference = new Reference("John", 3, 16);
         string _reference = reference.GetDisplayText();
+        Scripture verse = new Scripture(_reference, scriptureVerse);
+        string border = "|------------------------------------------------|";
+
         // List<int> numbers = new List<int>();
         // int sum = 0;
         // List<Word> _words = new List<Word>();
@@ -26,24 +29,20 @@ class Program
 
 
             // Console.WriteLine(_verse);
+            Console.WriteLine($"{border}"); 
 
-            Scripture verse = new Scripture(_reference, scriptureVerse);
             string _verse = verse.GetDisplayText();
+
+            Console.WriteLine($"\n{border}\n");
 
 
             Console.Write("Press enter to hide words or type \"quit\" to exit: ");
             _quit = Console.ReadLine(); // exit DO NOT DELETE
-
-            // if (_quit != "quit")
-            // {
-            //     numbers.Add(20);
-            // }
-            // foreach (int number in numbers)
-            // {
-            //     sum += number;
-            //     Console.WriteLine(sum);
-            // }
-            // Console.WriteLine(sum);
+            if (_quit == "")
+            {
+                verse.IncreaseChance();
+            }
+        
 
         }
         Console.Clear();
