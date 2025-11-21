@@ -56,6 +56,9 @@ public class Scripture
 
     public string GetDisplayText()
     {
+
+
+        
         return $"{_reference} - {_verse}";
     }
 

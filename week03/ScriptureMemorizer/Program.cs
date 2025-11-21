@@ -29,7 +29,7 @@ class Program
 
         while (_quit != "quit")
         {
-            Console.Clear();
+            // Console.Clear(); // to clear previous itterations
 
             string[] splitWords = _verse.Split(' ');
             string border = "|------------------------------------------------|";
@@ -37,6 +37,7 @@ class Program
             Console.WriteLine($"\n{border}");
             foreach (string s in splitWords)
             {
+            
                 if (s == ",")
                 {
                     Console.Write($"\b,\n");
@@ -44,19 +45,9 @@ class Program
                 }
                 else
                 {
-                    if (s != "___")
-                    {
-                        Word Word = new Word(s);
-                        s = "___";
-
-                    }
-
-                    else
-                    {
-                        Console.Write($"{s} ");
-                        _words.Add(new Word(s));
-                        
-                    }
+                    
+                    Console.Write($"{s} ");
+                    _words.Add(new Word(s));
 
                 }
 
