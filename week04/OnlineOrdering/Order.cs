@@ -5,7 +5,6 @@ public class Order
     private string _id;
     private bool _shipping;
     private int _sum;
-    private int _total;
     private List<int> _items = new List<int>();
 
     public Order(string productName, int item)
@@ -14,16 +13,48 @@ public class Order
         // _total = total;
         _items.Add(item);
     }
-
-    public void Calc()
+    public Order()
     {
+
+    }
+
+    public int Calc()
+    {
+
 
         foreach (int item in _items)
         {
             _sum += item;
         }
+        return _sum;
+    }
+
+    public string Label()
+    {
+        if (_productName == "mug")
+        {
+            _id = "_mug_";
+        }
+        else if (_productName == "bag")
+        {
+            _id = "_bag_";
+        }
+        else if (_productName == "shoes")
+        {
+            _id = "_shoes_";
+        }
+        return _id;
 
     }
+    
+    // public int AddItems
+    // {
+    //     get { return _sum; }
+    //     set
+    //     {
+            
+    //     }
+    // }
     // public int Cart()
     // {
     //     if (_productName == "mug")

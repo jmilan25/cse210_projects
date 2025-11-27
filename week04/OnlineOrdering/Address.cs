@@ -16,6 +16,10 @@ public class Address
         {
             local = true;
         }
+        else
+        {
+            local = false;
+        }
         return local;
     }
 
