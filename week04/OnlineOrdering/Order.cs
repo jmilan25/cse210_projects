@@ -1,9 +1,7 @@
 public class Order
 {
-    private string _customerName;
     private string _productName;
     private string _id;
-    private bool _shipping;
     private int _sum;
     private List<int> _items = new List<int>();
 
@@ -13,10 +11,10 @@ public class Order
         // _total = total;
         _items.Add(item);
     }
-    public Order()
-    {
+    // public Order()
+    // {
 
-    }
+    // }
 
     public int Calc()
     {
