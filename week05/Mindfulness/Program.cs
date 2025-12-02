@@ -5,7 +5,14 @@ class Program
     static void Main(string[] args)
     {
         // Console.WriteLine("Hello World! This is the Mindfulness Project.");
+        Activity spinner = new Activity();
+        // spinner.ShowSpinner(20);
+        // spinner.ShowCountDown(10);
         Menu();
+        // ReflectingActivity reflecting = new ReflectingActivity();
+        // reflecting.DisplayStartingMessage();
+
+
     }
 
     public static void Menu()
@@ -17,56 +24,82 @@ class Program
                         "\n(4) Quit\n");
         string text = Console.ReadLine();
         Answer(text);
-        // Console.WriteLine(text);
-        // return text;
+        // Console.WriteLine("How long would you like to do this activity? (seconds) ");
+        // string _number = Console.ReadLine();
+        // int _time = Int32.Parse(_number);
+
+        // Timer(text, _time);
+
+
         
     }
-    
+
     public static void Answer(string name)
     {
+        // int _seconds;
 
-        string _description;
-        // string name;
 
         if (name == "1")
         {
-            _description = "This activity will help you relax by" +
-            "\nwalking you through breathing in and out slowly." +
-            "\nClear your mind and focus on your breathing";
-            // _description = text;
-            name = "Breathing Activity";
+            BreathingActivity breathing = new BreathingActivity();
+            breathing.DisplayStartingMessage();
+
+            Console.WriteLine("How long would you like to do this activity? (seconds) ");
+            string _time = Console.ReadLine();
+            int _duration = Int32.Parse(_time);
+
+            // breathing.ShowCountDown(_seconds);
+
+            breathing.Run(_duration);
+            breathing.DisplayEndingMessage();
+            Menu();
+
         }
 
         else if (name == "2")
         {
-            _description = "This activity will help you reflect " +
-            "\non times in your life when you have shown " +
-            "\nstrength and resilience. This will help you " +
-            "\nrecognize the power you have and how you can " +
-            "\nuse it in other aspects of your life.";
-            // _description = text;
-            name = "Reflecting Activity";
+            ReflectingActivity reflecting = new ReflectingActivity();
+            reflecting.DisplayStartingMessage();
+
+            Console.WriteLine("How long would you like to do this activity? (seconds) ");
+            string _time = Console.ReadLine();
+            int _duration = Int32.Parse(_time);
+            // reflecting.ShowCountDown(_seconds);
+
+            reflecting.Run(_duration);
+            reflecting.DisplayEndingMessage();
+            Menu();
+
         }
 
         else if (name == "3")
         {
-            _description = "This activity will help you reflect on the " +
-            "\ngood things in your life by having you list " +
-            "\nas many things as you can in a certain area.";
-            // _description = text;
-            name = "Listing Activity";
+            ListingActivity listing = new ListingActivity();
+            listing.DisplayStartingMessage();
+
+            Console.WriteLine("How long would you like to do this activity? (seconds) ");
+            string _time = Console.ReadLine();
+            int _duration = Int32.Parse(_time);
+            // listing.ShowCountDown(_seconds);
+
+            listing.Run(_duration);
+            listing.DisplayEndingMessage();
+            Menu();
+
+        }
+
+        else if (name == "4")
+        {
+            Activity activity = new Activity();
+            activity.DisplayEndingMessage();
         }
         else
         {
             Console.WriteLine("Please select an activity");
             Menu();
             return;
-            
+
         }
-        
-
-
-        Activity activity = new Activity(name, _description, 3);
-        activity.DisplayStartingMessage();
     }
+    
 }
