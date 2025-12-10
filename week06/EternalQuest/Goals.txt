@@ -1,0 +1,4 @@
+5
+SG//simple//sgoal//1//False
+EG//egoal//eternal//2
+CG//checklist//cgoal//3//0//5//50
