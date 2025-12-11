@@ -79,7 +79,7 @@ public class GoalManager
         }
         else if (entry == "5")
         {
-            Console.WriteLine($"Your number is {entry}");
+            Console.WriteLine($"Cannot recond events for now");
             Start();
         }
         else
