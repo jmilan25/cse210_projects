@@ -18,6 +18,7 @@ public class SimpleGoal : Goal
     }
     public override bool IsComplete()
     {
+        
         return false;
         // return true;
     }

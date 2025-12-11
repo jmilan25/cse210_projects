@@ -11,15 +11,19 @@ public class ChecklistGoal : Goal
     }
     public override void RecordEvent()
     {
-
+        
     }
     public override bool IsComplete()
     {
-        return true;
-    }
-    public string GetDetailsString()
-    {
         if (_ammountCompleted == _target)
+        {
+            return true;
+        }
+        return false;
+    }
+    public override string GetDetailsString(bool check)
+    {
+        if (check == true)
         {
             return $"[X] {_shortName} ({_description}) —— Currently completed: {_ammountCompleted}/{_target}";
         }

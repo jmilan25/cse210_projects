@@ -1,4 +1,4 @@
-5
-SG//simple//sgoal//1//False
-EG//egoal//eternal//2
-CG//checklist//cgoal//3//0//5//50
+0
+SG//SG//test//1//False
+EG//hjhkj//laksjdhf//3
+CG//check//test//10//3//3//30

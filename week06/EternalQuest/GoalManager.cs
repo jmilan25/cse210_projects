@@ -29,34 +29,47 @@ public class GoalManager
         }
         else if (entry == "2")
         {
-            string[] lines = System.IO.File.ReadAllLines(filename);
-            for (int i = 1; i < lines.Length; i++)
+            Console.WriteLine("\nYour goals are:");
+            int i = 1;
+            foreach (Goal goal in _goals)
             {
-                string line = lines[i];
-
-                string[] parts = line.Split("//");
-
-                string id = parts[0];
-                foreach (Goal goal in _goals)
+                string line = goal.GetStringRepresentation();
+                string[] part = line.Split("//");
+                string id = part[0];
+                string goalName = part[1];
+                string description = part[2];
+                string points = part[3];
+                Console.Write($"({i}) ");
+                if (id == "SG")
                 {
-                    if (id == "SG")
-                    {
-                        
-                    }
-                    if (id == "EG")
-                    {
 
-                    }
-                    if (id == "CG")
-                    {
-
-                    }
+                    SimpleGoal simpleGoal = new SimpleGoal(goalName, description, points);
+                    bool check = simpleGoal.IsComplete();
+                    Console.WriteLine(simpleGoal.GetDetailsString(check));
                 }
+                if (id == "EG")
+                {
+                    EternalGoal eternalGoal = new EternalGoal(goalName,description,points);
+                    bool check = eternalGoal.IsComplete();
+                    Console.WriteLine(eternalGoal.GetDetailsString(check));
+                }
+                if (id == "CG")
+                {
+                    int target = int.Parse(part[5]);
+                    int bonus = int.Parse(part[6]);
+                    ChecklistGoal checklistGoal = new ChecklistGoal(goalName, description, points, target, bonus);
+                    bool check = checklistGoal.IsComplete();
+                    Console.WriteLine(checklistGoal.GetDetailsString(check));
+                }
+                i++;
             }
+
+            Start();
         }
         else if (entry == "3")
         {
-            Console.WriteLine($"Your number is {entry}");
+            SaveGoals();
+            Console.WriteLine("Your Goals are saved");
             Start();
         }
         else if (entry == "4")
@@ -81,11 +94,12 @@ public class GoalManager
     }
     public void ListGoalNames()
     {
-
+        Console.WriteLine("Name");
     }
     public void ListGoalDetails()
     {
-
+        Console.WriteLine("Details");
+        
     }
     public void CreateGoal()
     {
@@ -109,7 +123,7 @@ public class GoalManager
             SimpleGoal simpleGoal = new SimpleGoal(name, description, points);
             // simpleGoal.RecordEvent();
             _goals.Add(simpleGoal);
-            SaveGoals();
+            // SaveGoals();
         }
         else if (entry == "2")
         {
@@ -123,7 +137,7 @@ public class GoalManager
 
             EternalGoal eternalGoal = new EternalGoal(name, description, points);
             _goals.Add(eternalGoal);
-            SaveGoals();
+            // SaveGoals();
         }
         else if (entry == "3")
         {
@@ -143,7 +157,7 @@ public class GoalManager
 
             ChecklistGoal checklistGoal = new ChecklistGoal(name, description, points, target, bonus);
             _goals.Add(checklistGoal);
-            SaveGoals();
+            // SaveGoals();
         }
     }
     public void RecordEvent()
@@ -162,6 +176,7 @@ public class GoalManager
                 outputFile.WriteLine(goal.GetStringRepresentation());
             }
         }
+            
     }
     public void LoadGoals()
     {
@@ -192,7 +207,7 @@ public class GoalManager
             }
             if (id == "CG")
             {
-                string completion = parts[4];
+                // string completion = parts[4];
                 string target = parts[5];
                 string bonus = parts[6];
 
@@ -203,7 +218,8 @@ public class GoalManager
                 _goals.Add(checklistGoal);
 
             }
-            
+
         }
+        Console.WriteLine("\nYour goals have successfully loaded");
     }
 }
